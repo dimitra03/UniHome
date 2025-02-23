@@ -42,20 +42,19 @@
     margin: 0 15px; 
 }
 
-.account-button {
-    background-color: #364d67;
-    color: #ffffff; 
+.account {
+    background-color: #ffffff;
+    color: #364d67;
+    text-decoration: none;
+    font-weight: bold;
     border: none; 
-    width: 40px; 
-    height: 40px; 
-    border-radius: 50%; 
     font-size: 16px; 
     cursor: pointer; 
     display: flex; 
     align-items: center; 
     justify-content: center; 
     margin-left: auto; 
-}
+  }
 
 
 .container {
@@ -78,8 +77,65 @@
     position: relative;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
+/* Στυλ για το header */
+header h1 {
+  animation: fadeIn 2s ease-in-out;
+  font-family: 'Poppins', sans-serif; /* Μοντέρνα γραμματοσειρά */
+  color: #d8e6ff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Σκιά για βάθος */
+  font-size: 3rem; /* Αυξημένο μέγεθος για μεγαλύτερη ένταση */
+  letter-spacing: 2px; /* Αύξηση αποστάσεων γραμμάτων */
+  margin-left: 250px; /* Μετακίνηση με περιθώριο */
+}
 
+/* Υφιστάμενο fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Νέο animation για λέξεις που πέφτουν μία-μία */
+header h1 span {
+  display: inline-block;
+  opacity: 0; /* Ξεκινά αόρατο */
+  transform: translateY(-50px); /* Ξεκινά πιο ψηλά */
+  animation: dropWords 1s ease-out forwards;
+}
+
+/* Καθυστέρηση για κάθε λέξη */
+header h1 span:nth-child(1) {
+  animation-delay: 0s; /* Πρώτη λέξη */
+}
+
+header h1 span:nth-child(2) {
+  animation-delay: 0.3s; /* Δεύτερη λέξη */
+}
+
+header h1 span:nth-child(3) {
+  animation-delay: 0.6s; /* Τρίτη λέξη */
+}
+
+/* Animation για πτώση λέξεων */
+@keyframes dropWords {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px); /* Αρχική θέση */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Σκιά για δυναμικό εφέ */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Τελική θέση */
+    text-shadow: none;
+  }
+}
 
 .footer {
     text-align: center;
@@ -168,3 +224,17 @@ a:hover {
     color: #2980b9; /* Darker blue on hover */
 }
 
+.social-media {
+    display: flex;
+    justify-content: start; /* Align icons to the left */
+    gap: 10px; /* Add spacing between icons */
+    align-items: center; /* Vertically align icons */
+}
+.social-media img {
+    width: 50px; /* Set the width of the icons */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.social-media img:hover {
+    transform: scale(1.2); /* Enlarge the icon by 20% */
+}

@@ -16,6 +16,15 @@ body {
 .owner-details h1 {
     margin-top: 0;
 }
+
+.owner-details img {
+    max-width: 65%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px; 
+}
+
 .back-btn {
     background: #007bff;
     color: white;

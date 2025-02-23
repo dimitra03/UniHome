@@ -2,7 +2,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List" %>
-<%@ page import="src.main.java.Owner" %>
+<%@ page import="unihome.Owner" %>
+<%@ page errorPage="errorPage.jsp"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,6 +22,8 @@
     <%
         // Retrieve the list from the request attribute
         List<Owner> ownerDetails = (List<Owner>) request.getAttribute("owner");
+    
+        
     %>
     <% if (ownerDetails != null && !ownerDetails.isEmpty()) { %>
         <div class="owner-details">
@@ -29,6 +32,7 @@
                 // Iterate through the list of owners
                 for (Owner owner : ownerDetails) { 
             %>
+            <img src="images/owners/<%=owner.getOwnerID()%>.png" alt="Owner Image">
             <p><strong>First Name:</strong> <%= owner.getFirstName() %></p>
             <p><strong>Last Name:</strong> <%= owner.getLastName() %></p>
             <p><strong>Phone Number:</strong> <%= owner.getPhoneNumber() %></p>
@@ -38,11 +42,26 @@
                 } 
             %>
             <% } else { %>
-                <p>No owner details available.</p>
+           
+                <p style="color: white;">No owner details available.</p>
+         
             <% } %>
             <br>
-            <a href="showHouses.jsp" class="back-btn">Back to Houses</a>
+           
+        
+            
+            <%
+                String referer = request.getHeader("Referer");
+                if (referer == null || referer.isEmpty()) {
+                    referer = "errorPage.jsp"; // Set a fallback page
+                }
+            %>
 
+            <form action="<%= referer %>" method="POST">
+                <button type="submit" class="back-btn">Back to House</button>
+            </form>
+
+	    <br>
         </div>
 
 

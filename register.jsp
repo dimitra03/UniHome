@@ -1,86 +1,83 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
+<%@ page errorPage="errorPage.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="t8210147@aueb.gr">
+    <%@ include file="header.jsp" %>
     <title>Register</title>
-    <link rel="icon" href="images/unihome-logo-site.jpg">
     <link rel="stylesheet" href="css/register.css"> <!-- Link to the CSS file -->
 </head>
 
 <body>
-    <div class="container">
-        <!-- Heading and Subheading -->
-        <div class="header">
-            
-        </div>
 
+    <%String msg = (String) request.getAttribute("message");%>
+
+    
+    <div class="container">
         <div class="left">
-            <!-- Left section with image centered and smaller -->
+            <!-- Left section with image centered -->
             <img src="images/unihome-logo.jpg" alt="UniHome Logo">
         </div>
+
         
         <div class="right">
             <h2>Register</h2>
             <p>Find Your Perfect Student Home</p>
-            <form action="landingpage.html" method="POST" class="form-horizontal">
-                <!-- First Name -->
+            <% if (msg!= null ){ %>
+                <div class="alert alert-danger text-center" role="alert"><%=msg%></div>
+            <%}%>
+            <form action="registerController.jsp" method="POST" class="form-horizontal">
+                <!-- Form fields -->
                 <div class="form-group">
                     <label for="firstName">First name</label>
-                    <input type="text" name="firstName" id="firstName" class="form-control" placeholder="Enter your first name">
+                    <input type="text" name="firstName" id="firstName" class="form-control" placeholder="Enter your first name" required>
                 </div>
 
-                <!-- Last Name -->
                 <div class="form-group">
                     <label for="lastName">Last name</label>
-                    <input type="text" name="surname" id="surname" class="form-control" placeholder="Enter your last name">
+                    <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Enter your last name" required>
                 </div>
 
-                <!-- University -->
                 <div class="form-group">
                     <label for="university">University</label>
-                    <input type="text" name="university" id="university" class="form-control" placeholder="Enter your university">
+                    <input type="text" name="university" id="university" class="form-control" placeholder="Enter your university" required>
                 </div>
 
-                <!-- Username -->
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" name="username" id="username" class="form-control" placeholder="Enter your username">
+                    <input type="text" name="username" id="username" class="form-control" placeholder="Enter your username" required>
                 </div>
 
-                <!-- Password -->
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password">
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password" required>
                 </div>
 
-                <!-- Confirm Password -->
                 <div class="form-group">
-                    <label for="password">Confirm password</label>
-                    <input type="password" name="confirm_password" id="confirm_password" class="form-control" placeholder="Confirm your password">
+                    <label for="confirm_password">Confirm password</label>
+                    <input type="password" name="confirm_password" id="confirm_password" class="form-control" placeholder="Confirm your password" required>
                 </div>
                     
-                <!-- User Type -->
                 <div class="radio-group">
-                    <label class="radio-inline"> <br>
-                        <input type="radio" name="userType" value="student"> Student
+                    <label class="radio-inline">
+                        <input type="radio" name="userType" value="student" required> Student
                     </label>
                     <label class="radio-inline">
                         <input type="radio" name="userType" value="graduate"> Graduate
                     </label>
                 </div>        
 
-                <br><br>
-                
                 <!-- Buttons -->
                 <div class="form-group">
                     <button type="submit" class="btn btn-success btn-custom">Register</button>
-                    <button type="reset" class="btn btn-danger btn-custom">Cancel</button>              
+                    <button type="reset" class="btn btn-danger btn-custom">Cancel</button> 
+                    <button type="back" class="btn btn-back btn-custom"><a href="landingpage.jsp">Back to login</a></button>
+	            
+                    <!-- <button type="button" class="btn btn-primary btn-custom" href=landingpage.jsp>Back to login</button> -->
                 </div>
             </form>
         </div>
     </div>
-</body>
+
+   </body>
 </html>

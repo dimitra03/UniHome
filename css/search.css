@@ -6,12 +6,44 @@
 }
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background-color: #334b66; /* Page background color */
     color:white
 }
+
+.calendar-container {
+    display: flex;
+    flex-direction: column; /* Το label πάνω από τα dropdowns */
+    align-items: center;
+    background-color: #ffffff; /* Λευκό φόντο */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: fit-content;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    color: black; /* Μαύρο κείμενο */
+}
+
+.calendar-label {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.calendar-picker {
+    display: flex;
+    flex-wrap: nowrap; /* Εξασφαλίζει ότι τα dropdowns είναι στην ίδια γραμμή */
+    gap: 15px; /* Προσθέτει κενό ανάμεσα στα dropdowns */
+    justify-content: center; /* Κεντράρει τα dropdowns μέσα στο container */
+}
+
+
+
 .container {
     display: flex;
     max-width: 1000px;
@@ -20,7 +52,10 @@ body {
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
+main {
+    flex: 1; /* Κάνει το main να καταλαμβάνει όσο χώρο χρειάζεται */
+    width: 100%;
+}
 
 .right img {
     max-width: 80%; /* Make image smaller */
@@ -39,6 +74,18 @@ body {
 .left p {
     color: #777;
     margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Για να είναι κάθετα κεντραρισμένο */
+}
+
+form button {
+    margin-top: 20px; /* Προαιρετικό: Απόσταση από τα υπόλοιπα στοιχεία */
 }
 
 .form-group {
@@ -71,7 +118,7 @@ body {
 
 
 .styled-select {
-    width: 100%;
+    width: auto;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -139,16 +186,6 @@ body {
     color: white; /* Χρώμα κειμένου */
 }
 
-.footer {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #8f90cccb; 
-    color:black;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative;
-    bottom: 0;
-    border-radius: 5px;
-    width: 100%;
-    margin-top: 20px; 
-}
+
+
 

@@ -81,6 +81,31 @@ body {
     padding: 20px;
     border-bottom: 2px solid #364d67;
     position: relative;
+    margin-top: 20px; /* Προσθέτει απόσταση από την κορυφή */
+}
+
+.back-button {
+    background-color: #4CAF50; /* Πράσινο χρώμα */
+    color: white; /* Λευκό χρώμα για το κείμενο */
+    border: none; /* Αφαίρεση του περιγράμματος */
+    padding: 10px 20px; /* Εσωτερικό padding */
+    font-size: 16px; /* Μέγεθος γραμματοσειράς */
+    font-family: Arial, sans-serif; /* Γραμματοσειρά */
+    border-radius: 5px; /* Στρογγυλεμένες γωνίες */
+    cursor: pointer; /* Χεράκι όταν περνάει το ποντίκι */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ελαφριά σκιά */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Εφέ μετάβασης */
+}
+
+.back-button:hover {
+    background-color: #45a049; /* Πιο σκούρο πράσινο όταν το ποντίκι είναι από πάνω */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Πιο έντονη σκιά */
+}
+
+.back-button:active {
+    background-color: #3e8e41; /* Σκούρο πράσινο όταν το κουμπί πατιέται */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); /* Εφέ "πατήματος" */
+    transform: translateY(2px); /* Μικρή μετακίνηση προς τα κάτω */
 }
 
 
@@ -233,19 +258,6 @@ body {
     color: #f39c12; /* Χρώμα αστέρων όταν είναι επιλεγμένα ή όταν το ποντίκι είναι πάνω τους */
 }
 
-
-.footer {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #e2e1e1; 
-    color: #333;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative;
-    bottom: 0;
-    border-radius: 5px;
-    width: 100%;
-    margin-top: 20px; 
-}
 
 .editable {
     outline: none; /* Removes the black frame when clicked */

@@ -1,51 +1,54 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page errorPage="errorPage.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="UniHome - Find Your Perfect Student Home">
-    <meta name="author" content="t8210156@aueb.gr">
-    <link rel="icon" href="images/unihome-logo-site.jpg">
-    <title>UniHome</title>
-    <link rel="stylesheet" href="css/landingpage.css"> 
+  <head>
+      <%@ include file="header.jsp" %>
+      <title>Login</title>
+      <link rel="stylesheet" href="css/landingpage.css"> 
+  </head>
 
-<body>
-
-<div class="container">
-  <div class="right">
+<%
+  String msg = (String) request.getAttribute("message");
    
-    <img src="images/unihome-logo.jpg" alt="UniHome Logo">
-  </div>
-  
-  <div class="left">
-    <h2>Welcome to UniHome!</h2>
-    <p>Find Your Perfect Student Home</p>
-    
-    <form action="search.html">
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" placeholder="Enter your username">
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter your password">
-      </div>
-      <button type="submit" class="login-btn">Log in</button>
-    </form>
+%>
 
-    <div class="signup-link">
-      Don't have an account? <a href="register.html">Create an account</a>
+
+
+  <body>
+    <div class="container">
+      <div class="right">
+        <img src="images/unihome-logo.jpg" alt="UniHome Logo">
+      </div>
+
+      <div class="left">
+        <h2>Welcome to UniHome!</h2>
+        <p>Find Your Perfect Student Home</p>
+        <% if (msg!= null ){ %>
+          <div class="alert alert-danger text-center" role="alert"><%=msg%></div>
+        <%}%>
+        
+        <br>
+        <!-- Added name attributes for form submission -->
+        <form class="form-signin" method="post" action="loginController.jsp">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+          </div>
+          <button type="submit" class="login-btn">Log in</button>
+        </form>
+
+        <div class="signup-link">
+          Don't have an account? <a href="register.jsp">Create an account</a>
+        </div>
+      </div>
     </div>
-  </div>
-
-</div>
-      
-  
-  <!-- <%@ include file="footer.jsp" %> -->
-
-
-</body>
-
+    
+     
+  </body>
 </html>
+

@@ -1,0 +1,189 @@
+/* Γενικές ρυθμίσεις για τη σελίδα */
+body {
+    font-family: Arial, sans-serif; /* Ορισμός βασικής γραμματοσειράς */
+    margin: 0; /* Αφαίρεση περιθωρίου */
+    padding-bottom: 50px; /* Προσθέτεις χώρο στο κάτω μέρος */
+    padding: 0; /* Αφαίρεση εσωτερικού περιθωρίου */
+    background-color: #334b66; /* Απαλό γκρι για το φόντο */
+    height: 100%; /* Ρύθμιση ύψους 100% για την πλήρη κάλυψη της σελίδας */
+    display: flex; /* Χρήση Flexbox για να καταλαμβάνει όλη τη διαθέσιμη θέση */
+    flex-direction: column; /* Στοίχιση των στοιχείων κατακόρυφα */
+}
+
+/* Στυλ για την κεφαλίδα */
+header {
+  text-align: center; /* Κεντράρισμα του περιεχομένου */
+  margin: 20px 0; /* Περιθώριο πάνω-κάτω */
+}
+
+header img.myphoto {
+  border-radius: 10px; /* Στρογγυλεμένες γωνίες για την εικόνα */
+} 
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+header h1 {
+  animation: fadeIn 2s ease-in-out;
+  font-family: 'Poppins', sans-serif; /* Μοντέρνα γραμματοσειρά */
+  color: #d8e6ff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Σκιά για βάθος */
+  font-size: 3rem; /* Αυξημένο μέγεθος για μεγαλύτερη ένταση */
+  letter-spacing: 2px; /* Αύξηση αποστάσεων γραμμάτων */
+}
+ 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Στυλ για τη φόρμα */
+form {
+  max-width: 800px; /* Μέγιστο πλάτος φόρμας */
+  margin: 0 auto; /* Κεντράρισμα φόρμας */
+  background: #d8e6ff; /* Λευκό φόντο */
+  padding: 20px; /* Εσωτερικό περιθώριο */
+  border-radius: 10px; /* Στρογγυλεμένες γωνίες */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ελαφριά σκιά */
+  margin-bottom: 50px; /* Περιθώριο κάτω από τη φόρμα */
+}
+
+.form-group {
+  margin-bottom: 15px; /* Περιθώριο κάτω από κάθε ομάδα */
+}
+
+label {
+  font-weight: bold; /* Έντονα γράμματα */
+  display: block; /* Εμφάνιση σε ξεχωριστή γραμμή */
+  margin-bottom: 5px; /* Μικρό περιθώριο κάτω από την ετικέτα */
+}
+
+main {
+  flex: 1; /* Επιτρέπει στο main να καταλαμβάνει το υπόλοιπο ύψος */
+  padding-bottom: 50px; /* Περιθώριο στο κάτω μέρος του κύριου περιεχομένου */
+}
+
+.navbar {
+  background-color: #ffffff;
+  padding: 5px 20px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+}
+
+.navbar img {
+  width: 120px; 
+  height: auto; 
+  border-radius: 15px; 
+  object-fit: cover; 
+}
+
+.navbar-links {
+  display: flex; 
+  flex-grow: 1; 
+  justify-content: center; 
+}
+
+.navbar a {
+  color: #364d67;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.navbar-links a {
+  margin: 0 15px; 
+}
+
+.account {
+  background-color: #ffffff;
+  color: #364d67;
+  text-decoration: none;
+  font-weight: bold;
+  border: none; 
+  font-size: 16px; 
+  cursor: pointer; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  margin-left: auto; 
+}
+
+
+/* Στυλ για τα πεδία κειμένου και επιλογής */
+input[type="text"],
+input[type="area"],
+select { 
+  background-color: #fdfdef; /* Απαλό γαλάζιο χρώμα */
+  color: #333; /* Σκούρο κείμενο για καλή αντίθεση */
+  width: 100%; /* Πλάτος να καλύπτει όλο το container */
+  padding: 10px; /* Εσωτερικό περιθώριο */
+  margin-top: 5px; /* Περιθώριο πάνω */
+  border: 1px solid #ccc; /* Γκρι περίγραμμα */
+  border-radius: 5px; /* Στρογγυλεμένες γωνίες */
+}
+
+/* Στυλ για τα dropdown και τα checkbox */
+.styled-select {
+  width: 100%; /* Πλάτος 100% */
+  padding: 10px; /* Εσωτερικό περιθώριο */
+  border: 1px solid #ccc; /* Γκρι περίγραμμα */
+  border-radius: 5px; /* Στρογγυλεμένες γωνίες */
+}
+
+.amenities-options label {
+  margin-right: 15px; /* Περιθώριο δεξιά από κάθε επιλογή */
+  display: inline-block; /* Οι επιλογές να εμφανίζονται δίπλα-δίπλα */
+}
+
+/* Στυλ για την επιλογή επίπλωσης */
+.furnished-group {
+  margin: 15px 0; /* Περιθώριο πάνω-κάτω */
+}
+
+.furnished-group label {
+  margin-right: 10px; /* Περιθώριο δεξιά */
+}
+
+/* Στυλ για το κουμπί υποβολής */
+button[type="submit"] {
+  display: block; /* Εμφάνιση σε ξεχωριστή γραμμή */
+  margin: 20px auto; /* Κεντράρισμα κουμπιού */
+  padding: 10px 20px; /* Εσωτερικό περιθώριο */
+  background-color: #6e9acc; /* Μπλε χρώμα φόντου */
+  color: white; /* Λευκό χρώμα κειμένου */
+  font-size: 16px; /* Μέγεθος γραμματοσειράς */
+  border: none; /* Αφαίρεση περιγράμματος */
+  border-radius: 5px; /* Στρογγυλεμένες γωνίες */
+  cursor: pointer; /* Δείκτης χεριού όταν περνά ο κέρσορας */
+}
+
+button[type="submit"]:hover {
+  background-color: #5a87b8; /* Πιο σκούρο μπλε όταν το κουμπί περνάει ο κέρσορας */
+}
+
+/* Στυλ για τις εικόνες */
+.images-container {
+  display: flex; /* Ενεργοποίηση Flexbox */
+  justify-content: center; /* Κεντράρισμα εικόνων */
+  gap: 20px; /* Κενό ανάμεσα στις εικόνες */
+  margin: 20px 0; /* Περιθώριο πάνω-κάτω */
+}
+
+/* Στυλ για τις εικόνες */
+img.myphoto2 {
+  border-radius: 10px; /* Στρογγυλεμένες γωνίες */
+  width: 45%; /* Κάθε εικόνα να καταλαμβάνει 45% του container */
+  max-width: 360px; /* Μέγιστο πλάτος εικόνας */
+  height: auto; /* Αυτόματο ύψος για διατήρηση αναλογιών */
+  object-fit: cover; /* Βελτίωση εμφάνισης εικόνας */
+}
+
